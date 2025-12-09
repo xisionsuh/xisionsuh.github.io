@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서희석 | 경영관리 전문가</title>
+    <meta name="description" content="14년+ 경력의 경영관리 전문가. MBA, AI & Tech Enthusiast">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .description {
+            font-size: 1.125rem;
+            color: var(--text);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        /* About Section */
+        #about {
+            background: var(--bg-alt);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .about-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-item {
+            display: flex;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            width: 100px;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .info-value {
+            flex: 1;
+            color: var(--text);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--bg-alt);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .skill-card h3 {
+            font-size: 1.125rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            padding: 0.375rem 0.75rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            color: var(--text);
+        }
+
+        /* Experience Section */
+        #experience {
+            background: var(--bg-alt);
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-size: 0.875rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-company {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-role {
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-desc {
+            color: var(--text);
+            font-size: 0.9375rem;
+        }
+
+        .timeline-desc ul {
+            padding-left: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .timeline-desc li {
+            margin-bottom: 0.25rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-alt);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, #334155 100%);
+            color: white;
+        }
+
+        .project-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-header p {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        .project-body {
+            padding: 1.5rem;
+        }
+
+        .project-body p {
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-size: 0.9375rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-tech span {
+            padding: 0.25rem 0.625rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Education Section */
+        #education {
+            background: var(--bg-alt);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .education-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .education-card h3 {
+            font-size: 1.125rem;
+            color: var(--secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .education-card .major {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .period {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        #contact .section-title {
+            color: white;
+        }
+
+        #contact .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0f1a;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.875rem;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--secondary);
+            transition: 0.3s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.25rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Heeseok Suh</a>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">MBA Candidate 2026</span>
+            <h1>서희석</h1>
+            <p class="subtitle">경영관리 전문가 | Tech Enthusiast</p>
+            <p class="description">
+                14년 이상의 경영관리 경험을 바탕으로,
+                AI와 자동화 기술을 활용한 다양한 프로젝트를 운영하고 있습니다.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">스스로 답을 찾고 책임지는 경영관리 전문가</p>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        저는 SBS미디어그룹에서 사회생활을 시작하여 10여 년간 경영관리와 관련된
+                        다양한 직무를 경험했습니다. HR, 경영기획, 재무회계, M&A 실무, PMI까지
+                        경영관리의 거의 모든 영역을 아우르는 전문성을 갖추게 되었습니다.
+                    </p>
+                    <p>
+                        어떤 일을 맡아도 책임을 지고 성과를 만들어내는 사람입니다.
+                        낯선 업무에 적응하는 과정에서 어려움도 있었지만, 새로운 시작의 설렘과
+                        성과를 만들어내는 성취감을 통해 계속해서 앞으로 나아갈 수 있었습니다.
+                    </p>
+                    <p>
+                        최근에는 AI와 자동화 기술에 관심을 갖고 개인 프로젝트를 운영하며,
+                        경영 실무와 기술의 접점을 탐구하고 있습니다.
+                    </p>
+                </div>
+                <div class="about-info">
+                    <div class="info-item">
+                        <span class="info-label">이름</span>
+                        <span class="info-value">서희석 (Heeseok Suh)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">경력</span>
+                        <span class="info-value">14년+ (경영관리)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">학력</span>
+                        <span class="info-value">중앙대 MBA 재학</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">위치</span>
+                        <span class="info-value">인천, 대한민국</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">이메일</span>
+                        <span class="info-value">heeseock@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <p class="section-subtitle">경영관리 및 기술 역량</p>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>경영기획</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">사업계획 수립</span>
+                        <span class="skill-tag">예산관리</span>
+                        <span class="skill-tag">손익분석</span>
+                        <span class="skill-tag">구분손익</span>
+                        <span class="skill-tag">경영계획</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>재무회계</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">회계결산</span>
+                        <span class="skill-tag">감사대응</span>
+                        <span class="skill-tag">내부회계관리제도</span>
+                        <span class="skill-tag">자금관리</span>
+                        <span class="skill-tag">세무</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>IR & Governance</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">투자자 대응</span>
+                        <span class="skill-tag">이사회 운영</span>
+                        <span class="skill-tag">주주총회</span>
+                        <span class="skill-tag">공시업무</span>
+                        <span class="skill-tag">IPO 준비</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>M&A / PMI</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">기업인수 실무</span>
+                        <span class="skill-tag">PMI</span>
+                        <span class="skill-tag">프로세스 수립</span>
+                        <span class="skill-tag">기업분석</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Tech Stack</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">OpenAI API</span>
+                        <span class="skill-tag">AWS</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Business Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Excel (고급)</span>
+                        <span class="skill-tag">ERP</span>
+                        <span class="skill-tag">SAP</span>
+                        <span class="skill-tag">Google Workspace</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-subtitle">14년 이상의 경영관리 경력</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024.10 - 2025.10</div>
+                    <div class="timeline-company">미디어캔</div>
+                    <div class="timeline-role">경영기획팀장 (경영기획 총괄, IR)</div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>그룹 사업계획 수립 및 월단위 실적 보고</li>
+                            <li>투자사/주주사 IR 대응 및 이사회/주주총회 운영</li>
+                            <li>신규사업 전략 수립 (시장 리서치, 손익추정)</li>
+                            <li>영화 P&A 진행 및 투자자 수익 배분</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2022.10 - 2024.04</div>
+                    <div class="timeline-company">파우게임즈</div>
+                    <div class="timeline-role">경영지원팀장 (경영기획 총괄, IPO)</div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>네오위즈 그룹 연사업계획 및 월단위 손익 보고</li>
+                            <li>IPO 준비 (NH투자증권 주관)</li>
+                            <li>내부회계관리제도 구축, ERP 도입, 사규제정</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2021.04 - 2022.09</div>
+                    <div class="timeline-company">문고리닷컴</div>
+                    <div class="timeline-role">경영관리팀장 (경영관리 총괄)</div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>대표이사 직속 경영관리팀장 (재무, 회계, 인사, 총무 총괄)</li>
+                            <li>인수회사 PMI 진행 및 내부 프로세스 수립</li>
+                            <li>대규모 기업집단 공정위 공시 업무</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2017.08 - 2021.04</div>
+                    <div class="timeline-company">SBS네오파트너스</div>
+                    <div class="timeline-role">과장 (경영관리 총괄, M&A 실무)</div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>3개 법인 회계/세무/자금 총괄</li>
+                            <li>기업 인수 실무 (인수계획 수립, 기업분석, PMI)</li>
+                            <li>내부회계관리제도 운영</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2011.07 - 2017.07</div>
+                    <div class="timeline-company">SBS콘텐츠허브 (現 스튜디오S)</div>
+                    <div class="timeline-role">사원 ~ 대리 (HR, 경영기획, 재무)</div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>방송콘텐츠 판권 판매 관련 회계 담당</li>
+                            <li>Content Aggregator (pooq, SMR) 정산 회계</li>
+                            <li>경영기획 (구분손익, 예산관리)</li>
+                            <li>HR (공채 채용, 인턴제도 운영)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Side Projects</h2>
+            <p class="section-subtitle">AI와 자동화를 활용한 개인 프로젝트</p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🤖</div>
+                        <h3>S-Trader</h3>
+                        <p>AI 기반 암호화폐 트레이딩 봇</p>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            Multi-AI Council (GPT-4, Claude, Gemini, Grok)을 활용한
+                            자동 의사결정 트레이딩 시스템. Upbit/Binance 동시 지원.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Streamlit</span>
+                            <span>OpenAI API</span>
+                            <span>ccxt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">📊</div>
+                        <h3>Oracle</h3>
+                        <p>투자 분석 자동화 시스템</p>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            AI 기반 시장 분석 및 자동 리포트 생성.
+                            스케줄링 기반 정기 분석 및 웹 대시보드 시각화.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>Plotly</span>
+                            <span>APScheduler</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🎙️</div>
+                        <h3>Athena</h3>
+                        <p>회의 녹음 트랜스크립션 앱</p>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            음성 파일 자동 텍스트 변환.
+                            크로스 플랫폼 데스크톱 앱 (macOS, Windows, Linux).
+                        </p>
+                        <div class="project-tech">
+                            <span>Next.js</span>
+                            <span>Electron</span>
+                            <span>Tauri</span>
+                            <span>TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">📝</div>
+                        <h3>Neomnium</h3>
+                        <p>기술 블로그 & AI 뉴스 포털</p>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            AI/기술 뉴스 자동 큐레이션 및 기술 아티클 블로그.
+                            AI 기업별 뉴스 분류 시스템.
+                        </p>
+                        <div class="project-tech">
+                            <span>Next.js 16</span>
+                            <span>React 19</span>
+                            <span>TailwindCSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🔐</div>
+                        <h3>Portal</h3>
+                        <p>통합 인증 & 관리 시스템</p>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            Google OAuth 2.0 소셜 로그인.
+                            사용자 접근 권한 관리 및 텔레그램 알림 연동.
+                        </p>
+                        <div class="project-tech">
+                            <span>Flask</span>
+                            <span>OAuth 2.0</span>
+                            <span>SQLite</span>
+                            <span>Telegram API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">⚙️</div>
+                        <h3>n8n Automation</h3>
+                        <p>워크플로우 자동화 플랫폼</p>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            비주얼 워크플로우 빌더. API 연동 자동화 및
+                            스케줄링 기반 작업 실행.
+                        </p>
+                        <div class="project-tech">
+                            <span>Docker</span>
+                            <span>n8n.io</span>
+                            <span>REST API</span>
+                            <span>Webhook</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">학력 사항</p>
+
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>중앙대학교 경영전문대학원</h3>
+                    <p class="major">MBA (경영학 석사)</p>
+                    <p class="period">2024.03 ~ 2026.02 (재학중)</p>
+                </div>
+                <div class="education-card">
+                    <h3>중앙대학교</h3>
+                    <p class="major">철학, 경제학 복수전공</p>
+                    <p class="period">2002.03 ~ 2011.02 (졸업)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">연락처 및 링크</p>
+
+            <div class="contact-links">
+                <a href="mailto:heeseock@gmail.com" class="contact-link">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    heeseock@gmail.com
+                </a>
+                <a href="https://vibensway.com" target="_blank" class="contact-link">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    vibensway.com
+                </a>
+                <a href="https://neomnium.com" target="_blank" class="contact-link">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    neomnium.com
+                </a>
+                <a href="https://github.com/xisionsuh" target="_blank" class="contact-link">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 서희석. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
+
+        // Close menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.remove('active');
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
