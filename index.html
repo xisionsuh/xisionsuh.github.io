@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>서희석 | 경영관리 전문가</title>
-    <meta name="description" content="14년+ 경력의 경영관리 전문가. MBA, AI & Tech Enthusiast">
+    <title>서희석 | FP&A Expert</title>
+    <meta name="description" content="데이터와 시스템으로 비즈니스 의사결정을 지원하는 14년차 FP&A 전문가">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #0f172a;
-            --accent: #f59e0b;
-            --text: #1e293b;
-            --text-light: #64748b;
-            --bg: #ffffff;
-            --bg-alt: #f8fafc;
-            --border: #e2e8f0;
+            --bg: #fafafa;
+            --bg-card: #ffffff;
+            --text: #171717;
+            --text-secondary: #525252;
+            --text-muted: #a3a3a3;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --accent-light: #e6f0ff;
+            --gradient-start: #0066ff;
+            --gradient-end: #00ccff;
         }
 
         * {
@@ -32,10 +33,11 @@
         }
 
         body {
-            font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
-            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* Navigation */
@@ -43,95 +45,101 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
+            background: rgba(250, 250, 250, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 100;
             border-bottom: 1px solid var(--border);
         }
 
-        nav .container {
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 0 24px;
+            height: 64px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
-        nav .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--secondary);
+        .nav-logo {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--text);
             text-decoration: none;
         }
 
-        nav ul {
+        .nav-links {
             display: flex;
+            gap: 32px;
             list-style: none;
-            gap: 2rem;
         }
 
-        nav a {
+        .nav-links a {
+            color: var(--text-secondary);
             text-decoration: none;
-            color: var(--text-light);
+            font-size: 14px;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
 
-        nav a:hover {
-            color: var(--primary);
+        .nav-links a:hover {
+            color: var(--text);
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
-            padding: 6rem 2rem 4rem;
-        }
-
-        .hero-content {
-            max-width: 800px;
+            padding: 120px 24px 80px;
             text-align: center;
         }
 
+        .hero-content {
+            max-width: 720px;
+        }
+
         .hero-badge {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: var(--primary);
-            color: white;
-            border-radius: 50px;
-            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 100px;
+            font-size: 13px;
             font-weight: 500;
-            margin-bottom: 1.5rem;
+            margin-bottom: 24px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(40px, 8vw, 64px);
             font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 24px;
         }
 
-        .hero .subtitle {
-            font-size: 1.5rem;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .hero .description {
-            font-size: 1.125rem;
-            color: var(--text);
-            max-width: 600px;
-            margin: 0 auto 2rem;
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -139,388 +147,439 @@
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.75rem;
-            border-radius: 8px;
-            font-weight: 600;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 500;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: all 0.2s;
             cursor: pointer;
             border: none;
-            font-size: 1rem;
         }
 
         .btn-primary {
-            background: var(--primary);
+            background: var(--text);
             color: white;
         }
 
         .btn-primary:hover {
-            background: var(--primary-dark);
+            background: #333;
             transform: translateY(-2px);
         }
 
         .btn-secondary {
-            background: var(--secondary);
-            color: white;
+            background: var(--bg-card);
+            color: var(--text);
+            border: 1px solid var(--border);
         }
 
         .btn-secondary:hover {
-            background: #1e293b;
+            border-color: var(--text-muted);
             transform: translateY(-2px);
         }
 
-        /* Section Styles */
+        /* Sections */
         section {
-            padding: 5rem 2rem;
+            padding: 100px 24px;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+
         .section-title {
-            font-size: 2rem;
+            font-size: 36px;
             font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
         }
 
-        .section-subtitle {
-            color: var(--text-light);
-            margin-bottom: 3rem;
-        }
-
-        /* About Section */
-        #about {
-            background: var(--bg-alt);
-        }
-
-        .about-grid {
+        /* Stats */
+        .stats {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 100px;
         }
 
-        .about-text p {
-            margin-bottom: 1rem;
-            color: var(--text);
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
         }
 
-        .about-info {
-            background: white;
-            padding: 2rem;
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        /* Core Competencies */
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .competency-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s;
+        }
+
+        .competency-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 102, 255, 0.1);
+        }
+
+        .competency-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-light);
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
 
-        .info-item {
-            display: flex;
-            padding: 0.75rem 0;
+        .competency-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .competency-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Experience */
+        #experience {
+            background: var(--bg-card);
+        }
+
+        .experience-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 40px;
+            padding: 40px 0;
             border-bottom: 1px solid var(--border);
         }
 
-        .info-item:last-child {
+        .experience-item:last-child {
             border-bottom: none;
         }
 
-        .info-label {
-            width: 100px;
+        .experience-date {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .experience-content h3 {
+            font-size: 20px;
             font-weight: 600;
-            color: var(--text-light);
+            margin-bottom: 4px;
         }
 
-        .info-value {
-            flex: 1;
-            color: var(--text);
+        .experience-role {
+            font-size: 15px;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 16px;
         }
 
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-card {
-            background: var(--bg-alt);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        .skill-card h3 {
-            font-size: 1.125rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
+        .experience-highlights {
+            list-style: none;
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            padding: 0.375rem 0.75rem;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 0.875rem;
-            color: var(--text);
-        }
-
-        /* Experience Section */
-        #experience {
-            background: var(--bg-alt);
-        }
-
-        .timeline {
+        .experience-highlights li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding-left: 20px;
             position: relative;
         }
 
-        .timeline::before {
+        .experience-highlights li::before {
             content: '';
             position: absolute;
             left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 2rem;
-            padding-bottom: 2.5rem;
-        }
-
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -5px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            background: var(--primary);
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
             border-radius: 50%;
         }
 
-        .timeline-date {
-            font-size: 0.875rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .timeline-company {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 0.25rem;
-        }
-
-        .timeline-role {
-            color: var(--text-light);
-            margin-bottom: 0.75rem;
-        }
-
-        .timeline-desc {
-            color: var(--text);
-            font-size: 0.9375rem;
-        }
-
-        .timeline-desc ul {
-            padding-left: 1.25rem;
-            margin-top: 0.5rem;
-        }
-
-        .timeline-desc li {
-            margin-bottom: 0.25rem;
-        }
-
-        /* Projects Section */
-        .projects-grid {
+        /* Work Projects */
+        .work-projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
         }
 
-        .project-card {
-            background: var(--bg-alt);
-            border-radius: 12px;
-            overflow: hidden;
+        .work-project-card {
+            background: var(--bg-card);
             border: 1px solid var(--border);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .work-project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .work-project-header {
+            padding: 28px;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            color: white;
+        }
+
+        .work-project-header h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .work-project-header p {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .work-project-body {
+            padding: 28px;
+        }
+
+        .project-section {
+            margin-bottom: 20px;
+        }
+
+        .project-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-section-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .project-section p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .project-tag {
+            padding: 6px 12px;
+            background: var(--bg);
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Side Projects */
+        .side-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .side-project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s;
             cursor: pointer;
         }
 
-        .project-card:hover {
+        .side-project-card:hover {
+            border-color: var(--accent);
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .project-header {
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--secondary) 0%, #334155 100%);
-            color: white;
+        .side-project-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
         }
 
-        .project-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+        .side-project-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
 
-        .project-header h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.25rem;
+        .side-project-card > p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.5;
         }
 
-        .project-header p {
-            font-size: 0.875rem;
-            opacity: 0.8;
-        }
-
-        .project-body {
-            padding: 1.5rem;
-        }
-
-        .project-body p {
-            color: var(--text);
-            margin-bottom: 1rem;
-            font-size: 0.9375rem;
-        }
-
-        .project-tech {
+        .side-project-tech {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 6px;
         }
 
-        .project-tech span {
-            padding: 0.25rem 0.625rem;
-            background: var(--primary);
+        .side-project-tech span {
+            padding: 4px 10px;
+            background: var(--accent);
             color: white;
             border-radius: 4px;
-            font-size: 0.75rem;
+            font-size: 11px;
             font-weight: 500;
         }
 
-        .view-detail {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            margin-top: 1rem;
-            color: var(--primary);
-            font-weight: 500;
-            font-size: 0.875rem;
-        }
-
-        /* Education Section */
+        /* Education */
         #education {
-            background: var(--bg-alt);
+            background: var(--bg-card);
         }
 
         .education-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .education-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--primary);
+            padding: 28px;
+            border-left: 3px solid var(--accent);
+            background: var(--bg);
+            border-radius: 0 12px 12px 0;
         }
 
         .education-card h3 {
-            font-size: 1.125rem;
-            color: var(--secondary);
-            margin-bottom: 0.25rem;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
         }
 
         .education-card .major {
-            color: var(--text);
-            margin-bottom: 0.5rem;
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
         }
 
         .education-card .period {
-            font-size: 0.875rem;
-            color: var(--text-light);
+            font-size: 13px;
+            color: var(--text-muted);
         }
 
-        /* Contact Section */
-        #contact {
-            background: var(--secondary);
-            color: white;
+        /* Contact */
+        .contact-section {
             text-align: center;
-        }
-
-        #contact .section-title {
-            color: white;
-        }
-
-        #contact .section-subtitle {
-            color: rgba(255, 255, 255, 0.7);
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 16px;
             flex-wrap: wrap;
-            margin-top: 2rem;
+            margin-top: 40px;
         }
 
         .contact-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
+            gap: 10px;
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
             text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
         }
 
         .contact-link:hover {
-            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .contact-link svg {
+            width: 20px;
+            height: 20px;
         }
 
         /* Footer */
         footer {
-            background: #0a0f1a;
-            color: rgba(255, 255, 255, 0.6);
             text-align: center;
-            padding: 2rem;
-            font-size: 0.875rem;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-muted);
         }
 
-        /* Modal Styles */
+        /* Modal */
         .modal-overlay {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 200;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
-            overflow-y: auto;
+            padding: 24px;
         }
 
         .modal-overlay.active {
@@ -528,213 +587,193 @@
         }
 
         .modal {
-            background: white;
-            border-radius: 16px;
-            max-width: 900px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            max-width: 700px;
             width: 100%;
-            max-height: 90vh;
+            max-height: 85vh;
             overflow-y: auto;
             position: relative;
         }
 
         .modal-close {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 40px;
-            height: 40px;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            background: var(--bg-alt);
+            background: rgba(255,255,255,0.9);
             border: none;
             cursor: pointer;
+            font-size: 20px;
+            color: var(--text-secondary);
+            z-index: 10;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: var(--text-light);
-            transition: all 0.3s;
-            z-index: 10;
-        }
-
-        .modal-close:hover {
-            background: var(--border);
-            color: var(--text);
         }
 
         .modal-header {
-            padding: 2rem 2rem 1rem;
-            background: linear-gradient(135deg, var(--secondary) 0%, #334155 100%);
+            padding: 32px;
+            background: linear-gradient(135deg, #1a1a1a, #333);
             color: white;
         }
 
         .modal-header .project-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 40px;
+            margin-bottom: 16px;
         }
 
         .modal-header h2 {
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
         }
 
         .modal-header p {
-            opacity: 0.8;
+            opacity: 0.7;
         }
 
         .modal-body {
-            padding: 2rem;
+            padding: 32px;
         }
 
         .modal-screenshot {
             width: 100%;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
             border: 1px solid var(--border);
+            margin-bottom: 28px;
         }
 
         .modal-section {
-            margin-bottom: 2rem;
+            margin-bottom: 28px;
         }
 
         .modal-section h3 {
-            font-size: 1.125rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .modal-section p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
         .modal-section ul {
-            padding-left: 1.5rem;
+            list-style: none;
+            padding: 0;
         }
 
         .modal-section li {
-            margin-bottom: 0.5rem;
-            color: var(--text);
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .modal-section li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
         }
 
         .modal-tech-stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 8px;
         }
 
         .modal-tech-stack span {
-            padding: 0.5rem 1rem;
-            background: var(--secondary);
+            padding: 8px 14px;
+            background: var(--text);
             color: white;
-            border-radius: 6px;
-            font-size: 0.875rem;
-        }
-
-        .architecture-diagram {
-            background: #1a1a2e;
-            color: #00ff88;
-            padding: 1.5rem;
             border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.8rem;
-            line-height: 1.4;
-            overflow-x: auto;
-            white-space: pre;
+            font-size: 13px;
+            font-weight: 500;
         }
 
         .modal-links {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            gap: 12px;
+            margin-top: 24px;
         }
 
         .modal-links a {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--primary);
+            gap: 8px;
+            padding: 12px 20px;
+            background: var(--accent);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
+            font-size: 14px;
             font-weight: 500;
-            transition: background 0.3s;
         }
 
-        .modal-links a:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Mobile Menu */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 2px;
-            background: var(--secondary);
-            transition: 0.3s;
+        .architecture-diagram {
+            background: #1a1a1a;
+            color: #00ff88;
+            padding: 20px;
+            border-radius: 12px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 11px;
+            line-height: 1.5;
+            overflow-x: auto;
+            white-space: pre;
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .competencies-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .side-projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-            }
-
-            nav ul {
+            .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 1rem 2rem;
-                gap: 1rem;
-                border-bottom: 1px solid var(--border);
             }
 
-            nav ul.active {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.25rem;
-            }
-
-            .about-grid {
+            .stats {
                 grid-template-columns: 1fr;
             }
 
-            .timeline::before {
-                left: 0;
+            .competencies-grid {
+                grid-template-columns: 1fr;
             }
 
-            .timeline-item {
-                padding-left: 1.5rem;
+            .work-projects-grid {
+                grid-template-columns: 1fr;
             }
 
-            .modal {
-                margin: 1rem;
-                max-height: 95vh;
+            .side-projects-grid {
+                grid-template-columns: 1fr;
             }
 
-            .modal-header, .modal-body {
-                padding: 1.5rem;
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
             }
 
-            .architecture-diagram {
-                font-size: 0.65rem;
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 36px;
             }
         }
     </style>
@@ -742,229 +781,166 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="container">
-            <a href="#" class="logo">Heeseok Suh</a>
-            <button class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul id="nav-menu">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">서희석</a>
+            <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
+                <li><a href="#work-projects">Work</a></li>
+                <li><a href="#side-projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-badge">MBA Candidate 2026</span>
-            <h1>서희석</h1>
-            <p class="subtitle">경영관리 전문가 | Tech Enthusiast</p>
-            <p class="description">
-                14년 이상의 경영관리 경험을 바탕으로,
-                AI와 자동화 기술을 활용한 다양한 프로젝트를 운영하고 있습니다.
+            <div class="hero-badge">
+                <span>MBA Candidate 2026</span>
+            </div>
+            <h1>
+                <span class="hero-gradient">FP&A Expert</span><br>
+                & Tech Enthusiast
+            </h1>
+            <p>
+                데이터와 시스템으로 비즈니스 의사결정을 지원하는 14년차 경영관리 전문가.<br>
+                AI와 자동화 기술을 활용해 더 스마트한 재무 파트너를 지향합니다.
             </p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Contact Me</a>
-                <a href="#projects" class="btn btn-secondary">View Projects</a>
+                <a href="#contact" class="btn btn-primary">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    Contact
+                </a>
+                <a href="#work-projects" class="btn btn-secondary">View Work</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Stats -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-subtitle">스스로 답을 찾고 책임지는 경영관리 전문가</p>
-
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        저는 SBS미디어그룹에서 사회생활을 시작하여 10여 년간 경영관리와 관련된
-                        다양한 직무를 경험했습니다. HR, 경영기획, 재무회계, M&A 실무, PMI까지
-                        경영관리의 거의 모든 영역을 아우르는 전문성을 갖추게 되었습니다.
-                    </p>
-                    <p>
-                        어떤 일을 맡아도 책임을 지고 성과를 만들어내는 사람입니다.
-                        낯선 업무에 적응하는 과정에서 어려움도 있었지만, 새로운 시작의 설렘과
-                        성과를 만들어내는 성취감을 통해 계속해서 앞으로 나아갈 수 있었습니다.
-                    </p>
-                    <p>
-                        최근에는 AI와 자동화 기술에 관심을 갖고 개인 프로젝트를 운영하며,
-                        경영 실무와 기술의 접점을 탐구하고 있습니다.
-                    </p>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">14+</div>
+                    <div class="stat-label">Years of Experience</div>
                 </div>
-                <div class="about-info">
-                    <div class="info-item">
-                        <span class="info-label">이름</span>
-                        <span class="info-value">서희석 (Heeseok Suh)</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">경력</span>
-                        <span class="info-value">14년+ (경영관리)</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">학력</span>
-                        <span class="info-value">중앙대 MBA 재학</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">위치</span>
-                        <span class="info-value">인천, 대한민국</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">이메일</span>
-                        <span class="info-value">heeseock@gmail.com</span>
-                    </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Companies</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Industries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Side Projects</div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Core Competencies</h2>
-            <p class="section-subtitle">경영관리 및 기술 역량</p>
+            <div class="section-header">
+                <div class="section-label">Core Competencies</div>
+                <h2 class="section-title">What I Do Best</h2>
+            </div>
 
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>경영기획</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">사업계획 수립</span>
-                        <span class="skill-tag">예산관리</span>
-                        <span class="skill-tag">손익분석</span>
-                        <span class="skill-tag">구분손익</span>
-                        <span class="skill-tag">경영계획</span>
-                    </div>
+            <div class="competencies-grid">
+                <div class="competency-card">
+                    <div class="competency-icon">📊</div>
+                    <h3>FP&A Expert</h3>
+                    <p>연간 사업계획 수립, 월간 경영실적 분석(MBR), Rolling Forecast, 예산 차이 분석</p>
                 </div>
-                <div class="skill-card">
-                    <h3>재무회계</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">회계결산</span>
-                        <span class="skill-tag">감사대응</span>
-                        <span class="skill-tag">내부회계관리제도</span>
-                        <span class="skill-tag">자금관리</span>
-                        <span class="skill-tag">세무</span>
-                    </div>
+                <div class="competency-card">
+                    <div class="competency-icon">⚙️</div>
+                    <h3>System Setup</h3>
+                    <p>ERP 시스템 신규 도입, 관리회계 모듈 최적화, K-SOX(내부회계관리제도) 구축</p>
                 </div>
-                <div class="skill-card">
-                    <h3>IR & Governance</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">투자자 대응</span>
-                        <span class="skill-tag">이사회 운영</span>
-                        <span class="skill-tag">주주총회</span>
-                        <span class="skill-tag">공시업무</span>
-                        <span class="skill-tag">IPO 준비</span>
-                    </div>
-                </div>
-                <div class="skill-card">
+                <div class="competency-card">
+                    <div class="competency-icon">🤝</div>
                     <h3>M&A / PMI</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">기업인수 실무</span>
-                        <span class="skill-tag">PMI</span>
-                        <span class="skill-tag">프로세스 수립</span>
-                        <span class="skill-tag">기업분석</span>
-                    </div>
+                    <p>기업 인수 실무, 피인수 기업 재무 프로세스 통합, 연결 결산 프로세스 정립</p>
                 </div>
-                <div class="skill-card">
-                    <h3>Tech Stack</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">OpenAI API</span>
-                        <span class="skill-tag">AWS</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>Business Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Excel (고급)</span>
-                        <span class="skill-tag">ERP</span>
-                        <span class="skill-tag">SAP</span>
-                        <span class="skill-tag">Google Workspace</span>
-                    </div>
+                <div class="competency-card">
+                    <div class="competency-icon">🤖</div>
+                    <h3>Digital Literacy</h3>
+                    <p>AI(ChatGPT, Claude) 및 데이터 분석 툴을 활용한 업무 자동화 및 리서치 효율화</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience -->
     <section id="experience">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <p class="section-subtitle">14년 이상의 경영관리 경력</p>
+            <div class="section-header">
+                <div class="section-label">Experience</div>
+                <h2 class="section-title">Career Journey</h2>
+            </div>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2024.10 - 2025.10</div>
-                    <div class="timeline-company">미디어캔</div>
-                    <div class="timeline-role">경영기획팀장 (경영기획 총괄, IR)</div>
-                    <div class="timeline-desc">
-                        <ul>
-                            <li>그룹 사업계획 수립 및 월단위 실적 보고</li>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="experience-date">2024.10 — 2025.10</div>
+                    <div class="experience-content">
+                        <h3>미디어캔</h3>
+                        <div class="experience-role">경영기획팀장 (경영기획 총괄, IR)</div>
+                        <ul class="experience-highlights">
+                            <li>그룹사 사업계획 수립 및 월별 실적 트래킹 시스템 운영</li>
+                            <li>매월 경영실적보고회(MBR) 주관, 목표 대비 실적 차이 분석</li>
+                            <li>신규 콘텐츠 사업 진출 시 리서치 기반 추정 손익 계산</li>
                             <li>투자사/주주사 IR 대응 및 이사회/주주총회 운영</li>
-                            <li>신규사업 전략 수립 (시장 리서치, 손익추정)</li>
-                            <li>영화 P&A 진행 및 투자자 수익 배분</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">2022.10 - 2024.04</div>
-                    <div class="timeline-company">파우게임즈</div>
-                    <div class="timeline-role">경영지원팀장 (경영기획 총괄, IPO)</div>
-                    <div class="timeline-desc">
-                        <ul>
-                            <li>네오위즈 그룹 연사업계획 및 월단위 손익 보고</li>
-                            <li>IPO 준비 (NH투자증권 주관)</li>
-                            <li>내부회계관리제도 구축, ERP 도입, 사규제정</li>
+                <div class="experience-item">
+                    <div class="experience-date">2022.10 — 2024.04</div>
+                    <div class="experience-content">
+                        <h3>파우게임즈</h3>
+                        <div class="experience-role">경영지원팀장 (경영기획 총괄, IPO 준비)</div>
+                        <ul class="experience-highlights">
+                            <li>IPO 준비를 위한 ERP 시스템 신규 도입 총괄</li>
+                            <li>내부회계관리제도(K-SOX) 구축 및 RCM 설계</li>
+                            <li>프로젝트별/게임별 구분 손익 산출 가능하도록 Cost Center 재설계</li>
+                            <li>네오위즈 그룹 보고용 월간/분기간 손익 리포트 및 KPI 연동 분석</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">2021.04 - 2022.09</div>
-                    <div class="timeline-company">문고리닷컴</div>
-                    <div class="timeline-role">경영관리팀장 (경영관리 총괄)</div>
-                    <div class="timeline-desc">
-                        <ul>
-                            <li>대표이사 직속 경영관리팀장 (재무, 회계, 인사, 총무 총괄)</li>
-                            <li>인수회사 PMI 진행 및 내부 프로세스 수립</li>
-                            <li>대규모 기업집단 공정위 공시 업무</li>
+                <div class="experience-item">
+                    <div class="experience-date">2021.04 — 2022.09</div>
+                    <div class="experience-content">
+                        <h3>문고리닷컴</h3>
+                        <div class="experience-role">경영관리팀장 (경영관리 총괄, PMI)</div>
+                        <ul class="experience-highlights">
+                            <li>M&A 이후 모회사 재무 정책 이식 및 보고 체계 일원화</li>
+                            <li>관리회계 프로세스 운영 통한 손익보고 및 구조 개선</li>
+                            <li>대규모 기업집단 현황 공시 및 내부거래 공정위 공시</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">2017.08 - 2021.04</div>
-                    <div class="timeline-company">SBS네오파트너스</div>
-                    <div class="timeline-role">과장 (경영관리 총괄, M&A 실무)</div>
-                    <div class="timeline-desc">
-                        <ul>
-                            <li>3개 법인 회계/세무/자금 총괄</li>
-                            <li>기업 인수 실무 (인수계획 수립, 기업분석, PMI)</li>
-                            <li>내부회계관리제도 운영</li>
+                <div class="experience-item">
+                    <div class="experience-date">2017.08 — 2021.04</div>
+                    <div class="experience-content">
+                        <h3>SBS네오파트너스</h3>
+                        <div class="experience-role">과장 (경영관리 총괄, M&A 실무)</div>
+                        <ul class="experience-highlights">
+                            <li>3개 계열 법인 경영관리(회계/세무/자금) 통합 수행 (Shared Service)</li>
+                            <li>M&A 실무: 인수 대상 기업 재무실사(FDD) 지원 및 인수 후 통합 계획 수립</li>
+                            <li>내부회계관리제도 운영, 유휴자금 운용 통한 영업외수익 증대</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">2011.07 - 2017.07</div>
-                    <div class="timeline-company">SBS콘텐츠허브 (現 스튜디오S)</div>
-                    <div class="timeline-role">사원 ~ 대리 (HR, 경영기획, 재무)</div>
-                    <div class="timeline-desc">
-                        <ul>
-                            <li>방송콘텐츠 판권 판매 관련 회계 담당</li>
-                            <li>Content Aggregator (pooq, SMR) 정산 회계</li>
-                            <li>경영기획 (구분손익, 예산관리)</li>
-                            <li>HR (공채 채용, 인턴제도 운영)</li>
+                <div class="experience-item">
+                    <div class="experience-date">2011.07 — 2017.07</div>
+                    <div class="experience-content">
+                        <h3>SBS콘텐츠허브</h3>
+                        <div class="experience-role">사원 → 대리 (HR, 경영기획, 재무)</div>
+                        <ul class="experience-highlights">
+                            <li>국내외 판권 수익 배분(Recoup) 및 정산 시스템 구축 참여</li>
+                            <li>플랫폼(Pooq, SMR) 및 VOD 매출 정산, 미수채권 관리</li>
+                            <li>회사전체 구분손익 및 예산관리 실무</li>
                         </ul>
                     </div>
                 </div>
@@ -972,184 +948,248 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
+    <!-- Work Projects -->
+    <section id="work-projects">
         <div class="container">
-            <h2 class="section-title">Side Projects</h2>
-            <p class="section-subtitle">AI와 자동화를 활용한 개인 프로젝트 (클릭하여 상세보기)</p>
+            <div class="section-header">
+                <div class="section-label">Work Projects</div>
+                <h2 class="section-title">Key Achievements</h2>
+            </div>
 
-            <div class="projects-grid">
-                <div class="project-card" onclick="openModal('strader')">
-                    <div class="project-header">
-                        <div class="project-icon">🤖</div>
-                        <h3>S-Trader</h3>
-                        <p>AI 기반 암호화폐 트레이딩 봇</p>
+            <div class="work-projects-grid">
+                <div class="work-project-card">
+                    <div class="work-project-header">
+                        <h3>IPO 준비를 위한 ERP 시스템 도입</h3>
+                        <p>파우게임즈 | 2022-2024</p>
                     </div>
-                    <div class="project-body">
-                        <p>
-                            Multi-AI Council (GPT-4, Claude, Gemini, Grok)을 활용한
-                            자동 의사결정 트레이딩 시스템. Upbit/Binance 동시 지원.
-                        </p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Streamlit</span>
-                            <span>OpenAI API</span>
-                            <span>ccxt</span>
+                    <div class="work-project-body">
+                        <div class="project-section">
+                            <div class="project-section-title">Challenge</div>
+                            <p>기존 수기 관리 방식으로는 IPO 요건인 투명한 재무 관리 및 감사 대응이 불가능</p>
                         </div>
-                        <div class="view-detail">상세보기 →</div>
+                        <div class="project-section">
+                            <div class="project-section-title">Solution</div>
+                            <p>더존 ERP 시스템 신규 도입 총괄, 프로젝트별/게임별 구분 손익 산출 가능하도록 계정과목 및 Cost Center 재설계</p>
+                        </div>
+                        <div class="project-section">
+                            <div class="project-section-title">Result</div>
+                            <p>지정감사 대응 체계 완비, 월 마감 결산 프로세스 정비로 리드타임 단축, 자금 통제 절차 강화</p>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">ERP 도입</span>
+                            <span class="project-tag">K-SOX</span>
+                            <span class="project-tag">IPO</span>
+                            <span class="project-tag">내부통제</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card" onclick="openModal('oracle')">
-                    <div class="project-header">
-                        <div class="project-icon">📊</div>
-                        <h3>Oracle</h3>
-                        <p>투자 분석 자동화 시스템</p>
+                <div class="work-project-card">
+                    <div class="work-project-header">
+                        <h3>M&A 후 PMI 및 경영 효율화</h3>
+                        <p>문고리닷컴 | 2021-2022</p>
                     </div>
-                    <div class="project-body">
-                        <p>
-                            AI 기반 시장 분석 및 자동 리포트 생성.
-                            스케줄링 기반 정기 분석 및 웹 대시보드 시각화.
-                        </p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Flask</span>
-                            <span>Plotly</span>
-                            <span>APScheduler</span>
+                    <div class="work-project-body">
+                        <div class="project-section">
+                            <div class="project-section-title">Challenge</div>
+                            <p>인수 이후 모회사와의 재무 정책/보고 체계 불일치, 프로세스 부재로 인한 비효율</p>
                         </div>
-                        <div class="view-detail">상세보기 →</div>
+                        <div class="project-section">
+                            <div class="project-section-title">Solution</div>
+                            <p>모회사(홀딩스) 재무 정책 이식, 보고 체계(Reporting Line) 일원화, 관리회계 프로세스 신규 수립</p>
+                        </div>
+                        <div class="project-section">
+                            <div class="project-section-title">Result</div>
+                            <p>경영관리 및 사업부별 업무프로세스 정립, KPI 대시보드 기획으로 실적 가시성 확보</p>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">PMI</span>
+                            <span class="project-tag">프로세스 구축</span>
+                            <span class="project-tag">관리회계</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card" onclick="openModal('athena')">
-                    <div class="project-header">
-                        <div class="project-icon">🎙️</div>
-                        <h3>Athena</h3>
-                        <p>회의 녹음 트랜스크립션 앱</p>
+                <div class="work-project-card">
+                    <div class="work-project-header">
+                        <h3>3개 법인 Shared Service 구축</h3>
+                        <p>SBS네오파트너스 | 2017-2021</p>
                     </div>
-                    <div class="project-body">
-                        <p>
-                            음성 파일 자동 텍스트 변환.
-                            크로스 플랫폼 데스크톱 앱 (macOS, Windows, Linux).
-                        </p>
-                        <div class="project-tech">
-                            <span>Next.js</span>
-                            <span>Electron</span>
-                            <span>Tauri</span>
-                            <span>TypeScript</span>
+                    <div class="work-project-body">
+                        <div class="project-section">
+                            <div class="project-section-title">Challenge</div>
+                            <p>물적분할로 3개 회사 생성, 각 회사별 개별 관리로 인한 비효율 및 인력 부족</p>
                         </div>
-                        <div class="view-detail">상세보기 →</div>
+                        <div class="project-section">
+                            <div class="project-section-title">Solution</div>
+                            <p>3개 법인 회계/세무/자금 업무 통합 관리, 내부회계관리제도 통합 운영</p>
+                        </div>
+                        <div class="project-section">
+                            <div class="project-section-title">Result</div>
+                            <p>3개 법인 경영관리 업무 단독 총괄, 유휴자금 운용으로 영업외수익 증대, M&A 실무 역량 확보</p>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Shared Service</span>
+                            <span class="project-tag">자금관리</span>
+                            <span class="project-tag">세무</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card" onclick="openModal('neomnium')">
-                    <div class="project-header">
-                        <div class="project-icon">📝</div>
-                        <h3>Neomnium</h3>
-                        <p>기술 블로그 & AI 뉴스 포털</p>
+                <div class="work-project-card">
+                    <div class="work-project-header">
+                        <h3>판권 수익 배분 정산 시스템</h3>
+                        <p>SBS콘텐츠허브 | 2014-2017</p>
                     </div>
-                    <div class="project-body">
-                        <p>
-                            AI/기술 뉴스 자동 큐레이션 및 기술 아티클 블로그.
-                            AI 기업별 뉴스 분류 시스템.
-                        </p>
-                        <div class="project-tech">
-                            <span>Next.js 16</span>
-                            <span>React 19</span>
-                            <span>TailwindCSS</span>
+                    <div class="work-project-body">
+                        <div class="project-section">
+                            <div class="project-section-title">Challenge</div>
+                            <p>복잡한 권리자 구조(SBS, 제작사, 협회 등)로 인한 판권 수익 배분 정산의 복잡성</p>
                         </div>
-                        <div class="view-detail">상세보기 →</div>
-                    </div>
-                </div>
-
-                <div class="project-card" onclick="openModal('portal')">
-                    <div class="project-header">
-                        <div class="project-icon">🔐</div>
-                        <h3>Portal</h3>
-                        <p>통합 인증 & 관리 시스템</p>
-                    </div>
-                    <div class="project-body">
-                        <p>
-                            Google OAuth 2.0 소셜 로그인.
-                            사용자 접근 권한 관리 및 텔레그램 알림 연동.
-                        </p>
-                        <div class="project-tech">
-                            <span>Flask</span>
-                            <span>OAuth 2.0</span>
-                            <span>SQLite</span>
-                            <span>Telegram API</span>
+                        <div class="project-section">
+                            <div class="project-section-title">Solution</div>
+                            <p>국내외 판권 판매 수익 배분(Recoup) 체계화, Content Aggregator(Pooq, SMR) 정산 프로세스 구축</p>
                         </div>
-                        <div class="view-detail">상세보기 →</div>
-                    </div>
-                </div>
-
-                <div class="project-card" onclick="openModal('n8n')">
-                    <div class="project-header">
-                        <div class="project-icon">⚙️</div>
-                        <h3>n8n Automation</h3>
-                        <p>워크플로우 자동화 플랫폼</p>
-                    </div>
-                    <div class="project-body">
-                        <p>
-                            비주얼 워크플로우 빌더. API 연동 자동화 및
-                            스케줄링 기반 작업 실행.
-                        </p>
-                        <div class="project-tech">
-                            <span>Docker</span>
-                            <span>n8n.io</span>
-                            <span>REST API</span>
-                            <span>Webhook</span>
+                        <div class="project-section">
+                            <div class="project-section-title">Result</div>
+                            <p>복잡한 2차 권리자 구조 회계처리 정립, 미수채권 관리 및 회수율 향상</p>
                         </div>
-                        <div class="view-detail">상세보기 →</div>
+                        <div class="project-tags">
+                            <span class="project-tag">콘텐츠 회계</span>
+                            <span class="project-tag">정산 시스템</span>
+                            <span class="project-tag">채권관리</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- Side Projects -->
+    <section id="side-projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Side Projects</div>
+                <h2 class="section-title">Personal Tech Explorations</h2>
+            </div>
+
+            <div class="side-projects-grid">
+                <div class="side-project-card" onclick="openModal('strader')">
+                    <div class="side-project-icon">🤖</div>
+                    <h3>S-Trader</h3>
+                    <p>Multi-AI Council을 활용한 자동 의사결정 트레이딩 시스템</p>
+                    <div class="side-project-tech">
+                        <span>Python</span>
+                        <span>Streamlit</span>
+                        <span>OpenAI</span>
+                    </div>
+                </div>
+
+                <div class="side-project-card" onclick="openModal('oracle')">
+                    <div class="side-project-icon">📊</div>
+                    <h3>Oracle</h3>
+                    <p>AI 기반 시장 분석 및 자동 리포트 생성 시스템</p>
+                    <div class="side-project-tech">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>Plotly</span>
+                    </div>
+                </div>
+
+                <div class="side-project-card" onclick="openModal('athena')">
+                    <div class="side-project-icon">🎙️</div>
+                    <h3>Athena</h3>
+                    <p>음성 파일 자동 텍스트 변환 크로스 플랫폼 앱</p>
+                    <div class="side-project-tech">
+                        <span>Next.js</span>
+                        <span>Electron</span>
+                        <span>Tauri</span>
+                    </div>
+                </div>
+
+                <div class="side-project-card" onclick="openModal('neomnium')">
+                    <div class="side-project-icon">📝</div>
+                    <h3>Neomnium</h3>
+                    <p>AI/기술 뉴스 자동 큐레이션 및 기술 블로그</p>
+                    <div class="side-project-tech">
+                        <span>Next.js</span>
+                        <span>React</span>
+                        <span>TailwindCSS</span>
+                    </div>
+                </div>
+
+                <div class="side-project-card" onclick="openModal('portal')">
+                    <div class="side-project-icon">🔐</div>
+                    <h3>Portal</h3>
+                    <p>Google OAuth 기반 통합 인증 게이트웨이</p>
+                    <div class="side-project-tech">
+                        <span>Flask</span>
+                        <span>OAuth 2.0</span>
+                        <span>SQLite</span>
+                    </div>
+                </div>
+
+                <div class="side-project-card" onclick="openModal('n8n')">
+                    <div class="side-project-icon">⚙️</div>
+                    <h3>n8n Automation</h3>
+                    <p>API 연동 워크플로우 자동화 플랫폼</p>
+                    <div class="side-project-tech">
+                        <span>Docker</span>
+                        <span>n8n.io</span>
+                        <span>REST API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
     <section id="education">
         <div class="container">
-            <h2 class="section-title">Education</h2>
-            <p class="section-subtitle">학력 사항</p>
+            <div class="section-header">
+                <div class="section-label">Education</div>
+                <h2 class="section-title">Academic Background</h2>
+            </div>
 
             <div class="education-grid">
                 <div class="education-card">
                     <h3>중앙대학교 경영전문대학원</h3>
                     <p class="major">MBA (경영학 석사)</p>
-                    <p class="period">2024.03 ~ 2026.02 (재학중)</p>
+                    <p class="period">2024.03 — 2026.02 (재학중)</p>
                 </div>
                 <div class="education-card">
                     <h3>중앙대학교</h3>
                     <p class="major">철학, 경제학 복수전공</p>
-                    <p class="period">2002.03 ~ 2011.02 (졸업)</p>
+                    <p class="period">2002.03 — 2011.02 (졸업)</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <p class="section-subtitle">연락처 및 링크</p>
+            <div class="section-header">
+                <div class="section-label">Contact</div>
+                <h2 class="section-title">Let's Connect</h2>
+            </div>
 
             <div class="contact-links">
                 <a href="mailto:heeseock@gmail.com" class="contact-link">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     heeseock@gmail.com
                 </a>
-                <a href="https://vibensway.com" target="_blank" class="contact-link">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                    vibensway.com
+                <a href="https://github.com/xisionsuh" target="_blank" class="contact-link">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
                 </a>
                 <a href="https://neomnium.com" target="_blank" class="contact-link">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-                    neomnium.com
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    Blog
                 </a>
-                <a href="https://github.com/xisionsuh" target="_blank" class="contact-link">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    GitHub
+                <a href="https://vibensway.com" target="_blank" class="contact-link">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    Portfolio
                 </a>
             </div>
         </div>
@@ -1157,10 +1197,10 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 서희석. All rights reserved.</p>
+        <p>&copy; 2025 서희석. All rights reserved.</p>
     </footer>
 
-    <!-- Modal Overlay -->
+    <!-- Modal -->
     <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
         <div class="modal" onclick="event.stopPropagation()">
             <button class="modal-close" onclick="closeModal()">&times;</button>
@@ -1169,7 +1209,6 @@
     </div>
 
     <script>
-        // Project Data
         const projects = {
             strader: {
                 icon: '🤖',
@@ -1182,10 +1221,9 @@
                     '실시간 시장 분석 (Google Search API, YouTube Data API 연동)',
                     'Upbit(원화 현물) & Binance(USDT 선물) 동시 지원',
                     '자동 포지션 관리 및 리스크 컨트롤',
-                    '실시간 텔레그램 알림 연동',
-                    '24/7 무중단 운영 시스템'
+                    '실시간 텔레그램 알림 연동'
                 ],
-                techStack: ['Python 3.10+', 'asyncio', 'Streamlit', 'OpenAI API', 'Anthropic API', 'Gemini API', 'ccxt', 'SQLite'],
+                techStack: ['Python', 'asyncio', 'Streamlit', 'OpenAI API', 'Anthropic API', 'ccxt'],
                 architecture: `┌─────────────────────────────────────────────────────────┐
 │                    AI Council                           │
 │  ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐       │
@@ -1217,13 +1255,7 @@
                     '웹 대시보드를 통한 분석 결과 시각화',
                     'Plotly를 활용한 인터랙티브 차트'
                 ],
-                techStack: ['Python', 'Flask', 'APScheduler', 'pandas', 'numpy', 'Plotly', 'Streamlit'],
-                modules: [
-                    { name: 'Oracle Analyzer', desc: 'AI 기반 시장 분석 엔진' },
-                    { name: 'Analysis Scheduler', desc: '정기 분석 작업 스케줄러' },
-                    { name: 'Oracle Flask', desc: '분석 결과 API 서버' },
-                    { name: 'Investment Analyzer', desc: '투자 포트폴리오 분석' }
-                ],
+                techStack: ['Python', 'Flask', 'APScheduler', 'pandas', 'Plotly', 'Streamlit'],
                 links: [{ text: 'Live Demo', url: 'https://vibensway.com/analysis/' }]
             },
             athena: {
@@ -1231,15 +1263,14 @@
                 title: 'Athena',
                 subtitle: '회의 녹음 트랜스크립션 앱',
                 screenshot: 'screenshots/athena.png',
-                description: '음성 파일을 자동으로 텍스트로 변환하는 크로스 플랫폼 데스크톱 애플리케이션입니다. Electron과 Tauri를 활용하여 macOS, Windows, Linux에서 모두 사용 가능합니다.',
+                description: '음성 파일을 자동으로 텍스트로 변환하는 크로스 플랫폼 데스크톱 애플리케이션입니다.',
                 features: [
                     '음성 파일 자동 텍스트 변환',
                     '크로스 플랫폼 데스크톱 앱 (macOS, Windows, Linux)',
                     '실시간 녹음 및 변환',
-                    'Electron Builder (.dmg, .exe, .AppImage)',
-                    'Tauri 경량 버전 (Rust 기반)'
+                    'Electron Builder 및 Tauri 지원'
                 ],
-                techStack: ['Next.js 14', 'React', 'TypeScript', 'Electron', 'Tauri', 'TailwindCSS'],
+                techStack: ['Next.js', 'React', 'TypeScript', 'Electron', 'Tauri', 'TailwindCSS'],
                 links: [{ text: 'Web Version', url: 'https://vibensway.com/athena' }]
             },
             neomnium: {
@@ -1247,15 +1278,15 @@
                 title: 'Neomnium',
                 subtitle: '기술 블로그 & AI 뉴스 포털',
                 screenshot: 'screenshots/neomnium.png',
-                description: 'AI 및 기술 관련 뉴스를 자동으로 큐레이션하고, 기술 아티클을 발행하는 블로그 플랫폼입니다. Next.js를 활용한 정적 사이트 생성으로 빠른 로딩 속도를 제공합니다.',
+                description: 'AI 및 기술 관련 뉴스를 자동으로 큐레이션하고, 기술 아티클을 발행하는 블로그 플랫폼입니다.',
                 features: [
                     'AI/기술 뉴스 자동 큐레이션',
                     '기술 아티클 블로그',
                     '정적 사이트 생성 (SSG)',
-                    'AI 기업별 뉴스 분류 (OpenAI, Google, Anthropic, Meta, Microsoft)',
+                    'AI 기업별 뉴스 분류',
                     'SEO 최적화'
                 ],
-                techStack: ['Next.js 16', 'React 19', 'TailwindCSS 4', 'Static Export', 'WebDAV'],
+                techStack: ['Next.js', 'React', 'TailwindCSS', 'Static Export'],
                 links: [{ text: 'Visit Site', url: 'https://neomnium.com' }]
             },
             portal: {
@@ -1263,13 +1294,12 @@
                 title: 'Portal',
                 subtitle: '통합 인증 & 관리 시스템',
                 screenshot: 'screenshots/portal.png',
-                description: '모든 서비스의 통합 인증 게이트웨이입니다. Google OAuth 2.0을 통한 소셜 로그인과 사용자 권한 관리, 텔레그램 알림 연동 기능을 제공합니다.',
+                description: '모든 서비스의 통합 인증 게이트웨이입니다. Google OAuth 2.0을 통한 소셜 로그인과 사용자 권한 관리 기능을 제공합니다.',
                 features: [
                     'Google OAuth 2.0 소셜 로그인',
                     '사용자 접근 권한 관리',
                     '텔레그램 알림 연동',
-                    '서비스 통합 게이트웨이',
-                    'SQLite 기반 사용자 데이터 관리'
+                    '서비스 통합 게이트웨이'
                 ],
                 techStack: ['Flask', 'authlib', 'OAuth 2.0', 'SQLite', 'Telegram Bot API'],
                 links: [{ text: 'Visit Portal', url: 'https://vibensway.com' }]
@@ -1279,7 +1309,7 @@
                 title: 'n8n Automation',
                 subtitle: '워크플로우 자동화 플랫폼',
                 screenshot: null,
-                description: '비주얼 워크플로우 빌더를 통해 다양한 API를 연동하고 자동화된 작업을 실행하는 플랫폼입니다. Docker 컨테이너로 운영되며, 스케줄링 기반 작업 실행을 지원합니다.',
+                description: '비주얼 워크플로우 빌더를 통해 다양한 API를 연동하고 자동화된 작업을 실행하는 플랫폼입니다.',
                 features: [
                     '비주얼 워크플로우 빌더',
                     'API 연동 자동화',
@@ -1292,58 +1322,15 @@
             }
         };
 
-        function toggleMenu() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        }
-
-        // Close menu when clicking a link
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('nav-menu').classList.remove('active');
-            });
-        });
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            } else {
-                nav.style.boxShadow = 'none';
-            }
-        });
-
-        // Modal Functions
         function openModal(projectId) {
             const project = projects[projectId];
             if (!project) return;
-
-            let modulesHtml = '';
-            if (project.modules) {
-                modulesHtml = `
-                    <div class="modal-section">
-                        <h3>모듈 구성</h3>
-                        <table style="width:100%; border-collapse: collapse;">
-                            <tr style="background: var(--secondary); color: white;">
-                                <th style="padding: 10px; text-align: left;">모듈</th>
-                                <th style="padding: 10px; text-align: left;">설명</th>
-                            </tr>
-                            ${project.modules.map((m, i) => `
-                                <tr style="background: ${i % 2 === 0 ? 'var(--bg-alt)' : 'white'};">
-                                    <td style="padding: 10px; border: 1px solid var(--border);">${m.name}</td>
-                                    <td style="padding: 10px; border: 1px solid var(--border);">${m.desc}</td>
-                                </tr>
-                            `).join('')}
-                        </table>
-                    </div>
-                `;
-            }
 
             let architectureHtml = '';
             if (project.architecture) {
                 architectureHtml = `
                     <div class="modal-section">
-                        <h3>시스템 아키텍처</h3>
+                        <h3>Architecture</h3>
                         <div class="architecture-diagram">${project.architecture}</div>
                     </div>
                 `;
@@ -1354,10 +1341,7 @@
                 linksHtml = `
                     <div class="modal-links">
                         ${project.links.map(link => `
-                            <a href="${link.url}" target="_blank">
-                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                                ${link.text}
-                            </a>
+                            <a href="${link.url}" target="_blank">${link.text} →</a>
                         `).join('')}
                     </div>
                 `;
@@ -1373,22 +1357,21 @@
                     ${project.screenshot ? `<img src="${project.screenshot}" alt="${project.title}" class="modal-screenshot">` : ''}
 
                     <div class="modal-section">
-                        <h3>프로젝트 소개</h3>
+                        <h3>Overview</h3>
                         <p>${project.description}</p>
                     </div>
 
                     <div class="modal-section">
-                        <h3>주요 기능</h3>
+                        <h3>Features</h3>
                         <ul>
                             ${project.features.map(f => `<li>${f}</li>`).join('')}
                         </ul>
                     </div>
 
-                    ${modulesHtml}
                     ${architectureHtml}
 
                     <div class="modal-section">
-                        <h3>기술 스택</h3>
+                        <h3>Tech Stack</h3>
                         <div class="modal-tech-stack">
                             ${project.techStack.map(t => `<span>${t}</span>`).join('')}
                         </div>
@@ -1409,11 +1392,19 @@
             document.body.style.overflow = '';
         }
 
-        // Close modal on Escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
         });
     </script>
 </body>
